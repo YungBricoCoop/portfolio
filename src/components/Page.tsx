@@ -6,7 +6,11 @@ interface PageProps {
 }
 
 const Page: React.FC<PageProps> = ({ className = '', children }) => {
-    return <div className={`page ${className}`}>{children}</div>;
+    return (
+        <div className={`page min-h-screen bg-background  ${className}`}>
+            {children}
+        </div>
+    );
 };
 
 export default Page;
