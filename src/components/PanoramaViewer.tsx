@@ -6,7 +6,8 @@ const PanoramaViewer: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     // remove scrollbar width from window width
-    const scrollBarWidth = window.innerWidth - document.body.clientWidth;
+    const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
+    console.log(scrollBarWidth);
     const width = window.innerWidth - scrollBarWidth;
     const height = 400;
 
@@ -57,14 +58,14 @@ const PanoramaViewer: React.FC = () => {
 
         const onScroll = () => {
             scrollOffset = window.scrollY / 20000;
-			sphere.rotation.y+=scrollOffset;
+            sphere.rotation.y += scrollOffset;
         };
 
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', onWindowResize, false);
 
         let lastTime = 0;
-		let scrollOffset = 0;
+        let scrollOffset = 0;
         const rotationSpeed = 0.00004;
 
         const animate = (time: number) => {
@@ -82,7 +83,7 @@ const PanoramaViewer: React.FC = () => {
 
         return () => {
             window.removeEventListener('resize', onWindowResize);
-			window.removeEventListener('scroll', onScroll);
+            window.removeEventListener('scroll', onScroll);
             container.removeChild(renderer.domElement);
             renderer.dispose();
             material.dispose();
