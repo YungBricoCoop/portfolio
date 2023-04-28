@@ -6,15 +6,18 @@
 
 // components
 import Page from '../components/Page';
+import Pointer from "../components/Pointer";
 import SplineC from '../components/SplineC';
+import PanoramaViewer from "../components/PanoramaViewer";
+
 
 // images
 import logo from '../assets/logo.png';
-import PanoramaViewer from "../components/PanoramaViewer";
 
 const Home: React.FC = () => {
     return (
         <Page>
+			<Pointer latency={80} />
             <div className='flex gap-2 flex-wrap'>
                 <div className='flex flex-col items-center justify-center gap-2 text-white'>
                     <img src={logo} alt='logo' className='w-64' />
