@@ -10,6 +10,7 @@ import SplineC from '../components/SplineC';
 
 // images
 import logo from '../assets/logo.png';
+import PanoramaViewer from "../components/PanoramaViewer";
 
 const Home: React.FC = () => {
     return (
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
                 </div> 
                 <SplineC />
             </div>
+			<PanoramaViewer/>
         </Page>
     );
 };
