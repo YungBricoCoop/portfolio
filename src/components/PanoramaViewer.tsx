@@ -1,17 +1,23 @@
 // react
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 // three.js
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const PanoramaViewer: React.FC = () => {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const images = ['panorama1.png', 'panorama2.png', 'panorama3.png'];
 
     // remove scrollbar width from window width
     const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
     const width = window.innerWidth - scrollBarWidth;
     const height = 600;
+
+    //  refs
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    // states
+    const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
         const container = containerRef.current!;
@@ -32,10 +38,10 @@ const PanoramaViewer: React.FC = () => {
         const loader = new THREE.TextureLoader();
 
         // load the panorama image
-        const texture = loader.load('/panorama.jpg');
+        const texture = loader.load(images[currentImage]);
 
-		//INFO: this is mandatory to display the colors correctly
-		texture.encoding = THREE.sRGBEncoding;
+        //INFO: this is mandatory to display the colors correctly
+        texture.encoding = THREE.sRGBEncoding;
 
         // add lightnings
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -54,7 +60,7 @@ const PanoramaViewer: React.FC = () => {
         const sphere = new THREE.Mesh(geometry, material);
         scene.add(sphere);
 
-		camera.position.set(0, 0, 1);
+        camera.position.set(0, 0, 1);
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableZoom = false;
@@ -105,16 +111,28 @@ const PanoramaViewer: React.FC = () => {
             material.dispose();
             geometry.dispose();
         };
-    }, []);
+    }, [currentImage]);
 
     return (
         <div className='relative'>
             <div ref={containerRef} />
-            <div className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm'>
-                <h1 className='font-bold text-3xl'>Explore</h1>
+            <div
+                className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm cursor-pointer'
+                onClick={() =>
+                    setCurrentImage((currentImage + 1) % images.length)
+                }
+            >
+                <h1 className='font-bold text-3xl cursor-pointer'>
+                    Explore my mind
+                </h1>
                 <h2 className='font-medium text-xl italic'>
                     Use your mouse to move around
                 </h2>
+                <div className='absolute right-0 bottom-0 p-2'>
+                    <span className='text-white text-sm text-opacity-50 font-bold'>
+                        {currentImage + 1}/{images.length}
+                    </span>
+                </div>
             </div>
         </div>
     );
