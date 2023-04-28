@@ -1,4 +1,7 @@
+// react
 import React, { useEffect, useRef } from 'react';
+
+// three.js
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
@@ -7,7 +10,6 @@ const PanoramaViewer: React.FC = () => {
 
     // remove scrollbar width from window width
     const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
-    console.log(scrollBarWidth);
     const width = window.innerWidth - scrollBarWidth;
     const height = 400;
 
@@ -57,8 +59,13 @@ const PanoramaViewer: React.FC = () => {
         };
 
         const onScroll = () => {
-            scrollOffset = window.scrollY / 20000;
-            sphere.rotation.y += scrollOffset;
+            const currentScrollPosition = window.scrollY;
+            const scrollDirectionMultiplier =
+                currentScrollPosition > previousScrollPosition ? 1 : -1;
+            scrollOffset = currentScrollPosition / 20000;
+            sphere.rotation.y += scrollOffset * scrollDirectionMultiplier;
+
+            previousScrollPosition = currentScrollPosition;
         };
 
         window.addEventListener('scroll', onScroll);
@@ -66,13 +73,13 @@ const PanoramaViewer: React.FC = () => {
 
         let lastTime = 0;
         let scrollOffset = 0;
+        let previousScrollPosition = 0;
         const rotationSpeed = 0.00004;
 
         const animate = (time: number) => {
             const delta = time - lastTime;
             lastTime = time;
             requestAnimationFrame(animate);
-
             sphere.rotation.y += rotationSpeed * delta;
 
             controls.update();

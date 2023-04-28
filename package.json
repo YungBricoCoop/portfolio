@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@smakss/react-scroll-direction": "^1.0.5",
     "@splinetool/react-spline": "^2.2.1",
     "@splinetool/runtime": "^0.9.310",
     "framer-motion": "^10.12.4",
