@@ -9,7 +9,6 @@ const SplineC = () => {
     return (
         <div className='w-96 h-full'>
             <Spline
-                className={`spline-canvas ${loading ? 'spline-loading' : ''}`}
                 scene='https://prod.spline.design/1DYnFsiKosxp3rXB/scene.splinecode'
                 onLoad={() => setLoading(false)}
             />
