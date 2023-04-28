@@ -30,8 +30,17 @@ const PanoramaViewer: React.FC = () => {
         container.appendChild(renderer.domElement);
 
         const loader = new THREE.TextureLoader();
+
         // load the panorama image
         const texture = loader.load('/panorama.jpg');
+
+		//INFO: this is mandatory to display the colors correctly
+		texture.encoding = THREE.sRGBEncoding;
+
+        // add lightnings
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+        directionalLight.position.set(0, 1, 1).normalize();
+        scene.add(directionalLight);
 
         // create a sphere geometry
         const geometry = new THREE.SphereGeometry(500, 40, 40);
@@ -45,7 +54,7 @@ const PanoramaViewer: React.FC = () => {
         const sphere = new THREE.Mesh(geometry, material);
         scene.add(sphere);
 
-        camera.position.set(0, 0, 10);
+		camera.position.set(0, 0, 1);
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableZoom = false;
@@ -101,11 +110,11 @@ const PanoramaViewer: React.FC = () => {
     return (
         <div className='relative'>
             <div ref={containerRef} />
-                <div className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm'>
-                    <h1 className='font-bold text-3xl'>Explore</h1>
-                    <h2 className='font-medium text-xl italic'>
-                        Use your mouse to move around
-                    </h2>
+            <div className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm'>
+                <h1 className='font-bold text-3xl'>Explore</h1>
+                <h2 className='font-medium text-xl italic'>
+                    Use your mouse to move around
+                </h2>
             </div>
         </div>
     );
