@@ -5,10 +5,13 @@ import { useState } from 'react';
 import Spline from '@splinetool/react-spline';
 
 const SplineC = () => {
+    // states
     const [loading, setLoading] = useState(true);
+
     return (
-        <div className='w-96 h-full'>
+        <div className='flex-1'>
             <Spline
+                className='spline-container'
                 scene='https://prod.spline.design/1DYnFsiKosxp3rXB/scene.splinecode'
                 onLoad={() => setLoading(false)}
             />

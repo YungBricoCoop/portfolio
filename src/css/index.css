@@ -16,7 +16,7 @@
 /* TODO: use a transparent background for the track */
 ::-webkit-scrollbar {
     width: 8px;
-	height: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,4 +29,16 @@
 
 ::-webkit-scrollbar-thumb:hover {
     @apply bg-gray-500;
+}
+
+.spline-container {
+    width: auto !important;
+    height: auto !important;
+}
+
+@media screen and (max-width: 768px) {
+    .spline-container {
+        width: 100% !important;
+        height: auto !important;
+    }
 }

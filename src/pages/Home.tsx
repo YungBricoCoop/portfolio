@@ -6,10 +6,9 @@
 
 // components
 import Page from '../components/Page';
-import Pointer from "../components/Pointer";
+import Pointer from '../components/Pointer';
 import SplineC from '../components/SplineC';
-import PanoramaViewer from "../components/PanoramaViewer";
-
+import PanoramaViewer from '../components/PanoramaViewer';
 
 // images
 import logo from '../assets/logo.png';
@@ -17,7 +16,7 @@ import logo from '../assets/logo.png';
 const Home: React.FC = () => {
     return (
         <Page>
-			<Pointer latency={80} />
+            <Pointer latency={80} />
             <div className='flex gap-2 flex-wrap min-h-screen'>
                 <div className='flex flex-col items-center justify-center gap-2 text-white basis basis-full md:basis-1/3'>
                     <img src={logo} alt='logo' className='w-64' />
@@ -25,11 +24,11 @@ const Home: React.FC = () => {
                     <h2 className='font-medium text-xl italic'>
                         Welcome to my portfolio !
                     </h2>
-                </div> 
+                </div>
                 <SplineC />
             </div>
-			<PanoramaViewer/>
-			<div className="w-full h-96 bg-transparent"></div>
+            <PanoramaViewer />
+            <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
 };
