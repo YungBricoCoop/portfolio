@@ -11,7 +11,7 @@ const PanoramaViewer: React.FC = () => {
     // remove scrollbar width from window width
     const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
     const width = window.innerWidth - scrollBarWidth;
-    const height = 400;
+    const height = 600;
 
     useEffect(() => {
         const container = containerRef.current!;
@@ -62,7 +62,7 @@ const PanoramaViewer: React.FC = () => {
             const currentScrollPosition = window.scrollY;
             const scrollDirectionMultiplier =
                 currentScrollPosition > previousScrollPosition ? 1 : -1;
-            scrollOffset = currentScrollPosition / 20000;
+            scrollOffset = currentScrollPosition / 100000;
             sphere.rotation.y += scrollOffset * scrollDirectionMultiplier;
 
             previousScrollPosition = currentScrollPosition;
