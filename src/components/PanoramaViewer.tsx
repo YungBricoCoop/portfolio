@@ -98,7 +98,17 @@ const PanoramaViewer: React.FC = () => {
         };
     }, []);
 
-    return <div ref={containerRef} />;
+    return (
+        <div className='relative'>
+            <div ref={containerRef} />
+                <div className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm'>
+                    <h1 className='font-bold text-3xl'>Explore</h1>
+                    <h2 className='font-medium text-xl italic'>
+                        Use your mouse to move around
+                    </h2>
+            </div>
+        </div>
+    );
 };
 
 export default PanoramaViewer;
