@@ -20,7 +20,7 @@ const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
     reverse = false,
 }) => {
     const containerClass =
-        'w-64 h-24 mx-2 flex items-center justify-center rounded-xl bg-white bg-opacity-0 hover:bg-opacity-5 transition-all duration-500';
+        'w-24 md:w-64 h-24 mx-2 flex items-center justify-center rounded-xl bg-white bg-opacity-0 hover:bg-opacity-5 transition-all duration-500 cursor-pointer';
 
     const cardVariants = {
         offscreen: {
