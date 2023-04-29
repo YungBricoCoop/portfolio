@@ -14,6 +14,7 @@ import InfiniteBanner from '../components/InfiniteBanner';
 
 // images
 import logo from '../assets/logo.png';
+import Projects from "../components/Projects";
 
 const Home: React.FC = () => {
     const techno = [
@@ -63,6 +64,22 @@ const Home: React.FC = () => {
             <PanoramaViewer />
             <InfiniteBanner images={techno} speed={1} title="Technologies & Tools" icon="code" />
             <InfiniteBanner images={tools} reverse speed={0.8} />
+			<Projects projects={[
+				{
+					name: "Portfolio",
+					description: "Very long description that will be cut off at some point because it's too long and I don't want to write a lot of text for this project",
+					type: "Web",
+					image : "gradients/gradient1.jpg",
+					technologies: ["React", "Typescript", "TailwindCSS"],
+				},
+
+				{
+					name: "My first project",
+					description: "This is a description",
+					type: "Web",
+					image : "gradients/gradient2.jpg",
+				}
+			]}  />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
