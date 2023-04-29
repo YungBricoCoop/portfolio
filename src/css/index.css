@@ -12,6 +12,10 @@
     scroll-behavior: smooth;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 /* custom scrollbar */
 /* TODO: use a transparent background for the track */
 ::-webkit-scrollbar {
