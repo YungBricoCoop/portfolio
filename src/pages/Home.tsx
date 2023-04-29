@@ -8,8 +8,9 @@
 import Page from '../components/Page';
 import Pointer from '../components/Pointer';
 import SplineC from '../components/SplineC';
+import Button from '../components/Button';
 import PanoramaViewer from '../components/PanoramaViewer';
-import InfiniteBanner from "../components/InfiniteBanner";
+import InfiniteBanner from '../components/InfiniteBanner';
 
 // images
 import logo from '../assets/logo.png';
@@ -17,10 +18,10 @@ import logo from '../assets/logo.png';
 const Home: React.FC = () => {
     const images = [
         { src: 'html.svg' },
-		{ src: 'js.svg'},
-		{ src: 'react.svg'},
-		{ src: 'nodejs.svg'},
-		{ src: 'redis.svg'},
+        { src: 'js.svg' },
+        { src: 'react.svg' },
+        { src: 'nodejs.svg' },
+        { src: 'redis.svg' },
     ];
     return (
         <Page>
@@ -32,11 +33,23 @@ const Home: React.FC = () => {
                     <h2 className='font-medium text-xl italic'>
                         Welcome to my portfolio !
                     </h2>
+                    <div className='flex gap-4 my-4'>
+                        <Button
+                            label='GitHub'
+                            icon='github'
+                            onClick={() => {}}
+                        />
+                        <Button
+                            label='LinkedIn'
+                            icon='linkedin'
+                            onClick={() => {}}
+                        />
+                    </div>
                 </div>
                 <SplineC />
             </div>
             <PanoramaViewer />
-			<InfiniteBanner images={images} />
+            <InfiniteBanner images={images} />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
