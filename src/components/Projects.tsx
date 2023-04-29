@@ -61,14 +61,18 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                         className='relative top-0 left-0 w-full h-full text-white'
                         key={selectedProject.name}
                     >
-                        <motion.img
-                            src={selectedProject.image}
-                            alt={selectedProject.name}
-                            className='absolute top-0 w-full h-48 object-cover rounded-md blur-[200px] pointer-events-none'
+                        <motion.div
+                            className='absolute top-0 w-full h-48 pointer-events-none'
                             initial={{ opacity: 0.5, scale: 0.4, scaleX: 0 }}
                             animate={{ opacity: 1, scale: 1, scaleX: 4 }}
                             transition={{ duration: 0.5 }}
-                        />
+                        >
+                            <img
+                                src={selectedProject.image}
+                                alt={selectedProject.name}
+                                className={`absolute top-0 w-full h-48 object-cover rounded-md pointer-events-none blur-[200px]`}
+                            />
+                        </motion.div>
                         <img
                             src={selectedProject.image}
                             alt={selectedProject.name}
@@ -125,7 +129,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 {projects.map((project, i) => (
                     <div
                         key={`project-${i}`}
-                        onMouseEnter={() => debouncedSetSelectedProject(project)}
+                        onMouseEnter={() =>
+                            debouncedSetSelectedProject(project)
+                        }
                         onClick={() => setSelectedProject(project)}
                         className='flex justify-between items-baseline py-4 border-t-2 border-white hover:pl-6  hover:font-bold transition-all duration-500'
                     >
