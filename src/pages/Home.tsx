@@ -9,11 +9,19 @@ import Page from '../components/Page';
 import Pointer from '../components/Pointer';
 import SplineC from '../components/SplineC';
 import PanoramaViewer from '../components/PanoramaViewer';
+import InfiniteBanner from "../components/InfiniteBanner";
 
 // images
 import logo from '../assets/logo.png';
 
 const Home: React.FC = () => {
+    const images = [
+        { src: 'html.svg' },
+		{ src: 'js.svg'},
+		{ src: 'react.svg'},
+		{ src: 'nodejs.svg'},
+		{ src: 'redis.svg'},
+    ];
     return (
         <Page>
             <Pointer latency={80} />
@@ -28,6 +36,7 @@ const Home: React.FC = () => {
                 <SplineC />
             </div>
             <PanoramaViewer />
+			<InfiniteBanner images={images} />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
