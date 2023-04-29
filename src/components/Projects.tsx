@@ -1,8 +1,11 @@
 // react
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 // animations
 import { motion } from 'framer-motion';
+
+// functions
+import debounce from 'lodash/debounce';
 
 // interfaces
 interface Project {
@@ -35,6 +38,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         }
     };
 
+    const debouncedSetSelectedProject = useCallback(
+        debounce((project) => setSelectedProject(project), 200),
+        []
+    );
+
     const handleOpenGithub = () => {
         if (selectedProject?.github) {
             window.open(
@@ -50,7 +58,6 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             <div className='w-3/5 h-full'>
                 {selectedProject && (
                     <motion.div
-                        transition={{ duration: 0.8 }}
                         className='relative top-0 left-0 w-full h-full text-white'
                         key={selectedProject.name}
                     >
@@ -58,8 +65,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                             src={selectedProject.image}
                             alt={selectedProject.name}
                             className='absolute top-0 w-full h-48 object-cover rounded-md blur-[200px] pointer-events-none'
-                            initial={{ opacity: 0.5, scale: 0.4,  scaleX: 0 }}
-                            animate={{ opacity: 1, scale: 1 , scaleX: 4}}
+                            initial={{ opacity: 0.5, scale: 0.4, scaleX: 0 }}
+                            animate={{ opacity: 1, scale: 1, scaleX: 4 }}
                             transition={{ duration: 0.5 }}
                         />
                         <img
@@ -118,7 +125,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 {projects.map((project, i) => (
                     <div
                         key={`project-${i}`}
-                        onMouseEnter={() => setSelectedProject(project)}
+                        onMouseEnter={() => debouncedSetSelectedProject(project)}
                         onClick={() => setSelectedProject(project)}
                         className='flex justify-between items-baseline py-4 border-t-2 border-white hover:pl-6  hover:font-bold transition-all duration-500'
                     >
