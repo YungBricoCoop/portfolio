@@ -13,6 +13,7 @@ import Title from '../components/Title';
 import PanoramaViewer from '../components/PanoramaViewer';
 import InfiniteBanner from '../components/InfiniteBanner';
 import Projects from '../components/Projects';
+import Contact from "../components/Contact";
 
 // images
 import logo from '../assets/logo.png';
@@ -52,6 +53,9 @@ const Home: React.FC = () => {
 
             <Title title='Projects' icon='cubes' />
             <Projects projects={projects} />
+
+			<Title title='Contact' icon='envelope' />
+			<Contact email="mayencourt@elwan.ch" />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
