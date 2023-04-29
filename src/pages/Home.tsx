@@ -14,6 +14,7 @@ import PanoramaViewer from '../components/PanoramaViewer';
 import InfiniteBanner from '../components/InfiniteBanner';
 import Projects from '../components/Projects';
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 // images
 import logo from '../assets/logo.png';
@@ -56,7 +57,7 @@ const Home: React.FC = () => {
 
 			<Title title='Contact' icon='envelope' />
 			<Contact email="mayencourt@elwan.ch" />
-            <div className='w-full h-96 bg-transparent'></div>
+			<Footer message='Made with ❤️ by Elwan' />
         </Page>
     );
 };
