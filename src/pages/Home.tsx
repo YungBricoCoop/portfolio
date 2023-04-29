@@ -46,7 +46,6 @@ const Home: React.FC = () => {
                 />
                 <SplineC />
             </div>
-            <PanoramaViewer />
 
             <Title title='Technologies & Tools' icon='code' />
             <InfiniteBanner images={techno} speed={1} />
@@ -54,6 +53,8 @@ const Home: React.FC = () => {
 
             <Title title='Projects' icon='cubes' />
             <Projects projects={projects} />
+            
+			<PanoramaViewer />
 
 			<Title title='Contact' icon='envelope' />
 			<Contact email="mayencourt@elwan.ch" />

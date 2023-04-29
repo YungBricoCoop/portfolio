@@ -114,7 +114,7 @@ const PanoramaViewer: React.FC = () => {
     }, [currentImage]);
 
     return (
-        <div className='relative'>
+        <div className='relative my-16'>
             <div ref={containerRef} />
             <div
                 className='absolute top-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm cursor-pointer'
