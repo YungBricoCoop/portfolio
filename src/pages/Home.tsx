@@ -27,6 +27,16 @@ const Home: React.FC = () => {
         { src: 'banner/fastapi.png', link: 'https://fastapi.tiangolo.com/' },
         { src: 'banner/nodejs.svg', link: 'https://nodejs.org/en/' },
     ];
+    const tools = [
+        { src: 'banner/vscode.png', link: 'https://code.visualstudio.com/' },
+        { src: 'banner/git.png', link: 'https://git-scm.com/' },
+        { src: 'banner/postman.png', link: 'https://www.postman.com/' },
+        { src: 'banner/termius.png', link: 'https://termius.com/' },
+        { src: 'banner/copilot.png', link: 'https://copilot.github.com/' },
+        { src: 'banner/openai.png', link: 'https://openai.com/' },
+        { src: 'banner/figma.png', link: 'https://www.figma.com/' },
+        { src: 'banner/photoshop.png', link: 'https://www.adobe.com/' },
+    ];
     return (
         <Page>
             <Pointer latency={80} />
@@ -51,7 +61,8 @@ const Home: React.FC = () => {
                 <SplineC />
             </div>
             <PanoramaViewer />
-            <InfiniteBanner images={techno} />
+            <InfiniteBanner images={techno} speed={1} />
+			<InfiniteBanner images={tools} reverse speed={0.8} />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
