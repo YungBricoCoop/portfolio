@@ -16,12 +16,16 @@ import InfiniteBanner from '../components/InfiniteBanner';
 import logo from '../assets/logo.png';
 
 const Home: React.FC = () => {
-    const images = [
-        { src: 'html.svg' },
-        { src: 'js.svg' },
-        { src: 'react.svg' },
-        { src: 'nodejs.svg' },
-        { src: 'redis.svg' },
+    const techno = [
+        { src: 'banner/react.svg', link: 'https://reactjs.org/' },
+        {
+            src: 'banner/typescript.png',
+            link: 'https://www.typescriptlang.org/',
+        },
+        { src: 'banner/tailwind.png', link: 'https://tailwindcss.com/' },
+        { src: 'banner/python.png', link: 'https://www.python.org/' },
+        { src: 'banner/fastapi.png', link: 'https://fastapi.tiangolo.com/' },
+        { src: 'banner/nodejs.svg', link: 'https://nodejs.org/en/' },
     ];
     return (
         <Page>
@@ -47,7 +51,7 @@ const Home: React.FC = () => {
                 <SplineC />
             </div>
             <PanoramaViewer />
-            <InfiniteBanner images={images} />
+            <InfiniteBanner images={techno} />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );
