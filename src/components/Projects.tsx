@@ -57,10 +57,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                         <motion.img
                             src={selectedProject.image}
                             alt={selectedProject.name}
-                            className='w-full h-72 object-cover rounded-md'
-                            initial={{ width: '80%' }}
-                            animate={{ width: '100%' }}
-                            transition={{ duration: 0.8, delay: 0.1 }}
+                            className='absolute top-0 w-full h-48 object-cover rounded-md blur-[200px] pointer-events-none'
+                            initial={{ opacity: 0.5, scale: 0.4,  scaleX: 0 }}
+                            animate={{ opacity: 1, scale: 1 , scaleX: 4}}
+                            transition={{ duration: 0.5 }}
+                        />
+                        <img
+                            src={selectedProject.image}
+                            alt={selectedProject.name}
+                            className=' w-full h-72 object-cover rounded-md opacity-90'
                         />
                         <div className='absolute -top-3 -left-3 bg-white bg-opacity-20 p-4 px-6  rounded-md'>
                             <h2 className='text-2xl font-mono'>
