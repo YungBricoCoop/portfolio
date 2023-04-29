@@ -8,7 +8,7 @@
 import Page from '../components/Page';
 import Pointer from '../components/Pointer';
 import SplineC from '../components/SplineC';
-import Button from '../components/Button';
+import Hero from '../components/Hero';
 import PanoramaViewer from '../components/PanoramaViewer';
 import InfiniteBanner from '../components/InfiniteBanner';
 
@@ -27,25 +27,23 @@ const Home: React.FC = () => {
         <Page>
             <Pointer latency={80} />
             <div className='flex gap-2 flex-wrap min-h-screen'>
-                <div className='flex flex-col items-center justify-center gap-2 text-white basis basis-full md:basis-1/3'>
-                    <img src={logo} alt='logo' className='w-64' />
-                    <h1 className='font-bold text-4xl'>Elwan Mayencourt</h1>
-                    <h2 className='font-medium text-xl italic'>
-                        Welcome to my portfolio !
-                    </h2>
-                    <div className='flex gap-4 my-4'>
-                        <Button
-                            label='GitHub'
-                            icon='github'
-                            onClick={() => {}}
-                        />
-                        <Button
-                            label='LinkedIn'
-                            icon='linkedin'
-                            onClick={() => {}}
-                        />
-                    </div>
-                </div>
+                <Hero
+                    fullname='Elwan Mayencourt'
+                    welcomeMessage='Welcome to my portfolio !'
+                    logo={logo}
+                    links={[
+                        {
+                            name: 'Github',
+                            icon: 'github',
+                            link: 'https://github.com/YungBricoCoop',
+                        },
+                        {
+                            name: 'LinkedIn',
+                            icon: 'linkedin',
+                            link: 'https://www.linkedin.com/in/elwan-mayencourt-694291228/',
+                        },
+                    ]}
+                />
                 <SplineC />
             </div>
             <PanoramaViewer />
