@@ -6,12 +6,12 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const PanoramaViewer: React.FC = () => {
-    const images = ['panorama1.png', 'panorama2.png', 'panorama3.png'];
+    const images = ['panorama2.png', 'panorama1.png', 'panorama3.png'];
 
     // remove scrollbar width from window width
     const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
     const width = window.innerWidth - scrollBarWidth;
-    const height = 600;
+    const height = 700;
 
     //  refs
     const containerRef = useRef<HTMLDivElement>(null);
