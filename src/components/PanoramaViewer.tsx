@@ -117,7 +117,7 @@ const PanoramaViewer: React.FC = () => {
         <div className='relative'>
             <div ref={containerRef} />
             <div
-                className='absolute bottom-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm cursor-pointer'
+                className='absolute top-0 left-0 right-0 text-center px-8 py-2 text-white border-t-2 border-white border-opacity-5 bg-white bg-opacity-5 backdrop-blur-sm cursor-pointer'
                 onClick={() =>
                     setCurrentImage((currentImage + 1) % images.length)
                 }
@@ -128,7 +128,7 @@ const PanoramaViewer: React.FC = () => {
                 <h2 className='font-medium text-xl italic'>
                     Use your mouse to move around
                 </h2>
-                <div className='absolute right-0 bottom-0 p-2'>
+                <div className='absolute right-0 top-0 p-2'>
                     <span className='text-white text-sm text-opacity-50 font-bold'>
                         {currentImage + 1}/{images.length}
                     </span>
