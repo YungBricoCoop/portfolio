@@ -61,8 +61,8 @@ const Home: React.FC = () => {
                 <SplineC />
             </div>
             <PanoramaViewer />
-            <InfiniteBanner images={techno} speed={1} />
-			<InfiniteBanner images={tools} reverse speed={0.8} />
+            <InfiniteBanner images={techno} speed={1} title="Technologies & Tools" icon="code" />
+            <InfiniteBanner images={tools} reverse speed={0.8} />
             <div className='w-full h-96 bg-transparent'></div>
         </Page>
     );

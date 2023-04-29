@@ -1,20 +1,21 @@
-// react
-import { useEffect } from 'react';
-
 // components
-import { VerticalTicker, HorizontalTicker } from 'react-infinite-ticker';
+import { HorizontalTicker } from 'react-infinite-ticker';
 
 // animations
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 // interfaces
 interface InfiniteBannerProps {
+	title?: string;
+	icon?: string;
     images: { src: string; label?: string; link?: string }[];
     speed?: number;
     reverse?: boolean;
 }
 
 const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
+    title,
+	icon,
     images,
     speed = 1,
     reverse = false,
@@ -25,11 +26,11 @@ const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
     const cardVariants = {
         offscreen: {
             opacity: 0,
-			y: 20,
+            y: 20,
         },
         onscreen: {
             opacity: 1,
-			y: 0,
+            y: 0,
         },
     };
 
@@ -41,6 +42,12 @@ const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
             variants={cardVariants}
             viewport={{ once: true, amount: 0.8 }}
         >
+            {title && (
+                <div className='flex gap-2 justify-center items-center text-3xl font-bold text-center mt-8 mb-4 text-white'>
+                    {icon && <i className={`fas fa-${icon}`}></i>}
+                    {title}
+                </div>
+            )}
             <HorizontalTicker duration={20000 / speed} reverse={reverse}>
                 {images.map((image, index) => (
                     <motion.div
