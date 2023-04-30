@@ -16,8 +16,8 @@ const Pointer: React.FC<PointerProps> = ({ latency = 100 }) => {
         const handleMouseMove = (event: MouseEvent) => {
             // offset of the top left corner of the pointer point
             const pointerOffset = -6;
-            const newX = event.clientX + window.pageXOffset + pointerOffset;
-            const newY = event.clientY + window.pageYOffset + pointerOffset;
+            const newX = event.clientX + pointerOffset;
+            const newY = event.clientY + pointerOffset;
 
             // set the position of the pointer point with a latency
             setTimeout(() => {
@@ -38,7 +38,7 @@ const Pointer: React.FC<PointerProps> = ({ latency = 100 }) => {
         <motion.div
             className='hidden sm:block w-4 h-4 rounded-full bg-white bg-opacity-0 z-50 backdrop-invert select-none pointer-events-none'
             style={{
-                position: 'absolute',
+                position: 'fixed',
                 left: position.x,
                 top: position.y,
             }}
