@@ -54,8 +54,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     };
 
     return (
-        <div className='flex gap-16 h-full w-full md:w-8/12 mx-auto'>
-            <div className='w-3/5 h-full'>
+        <div className='flex flex-col md:flex-row gap-16 h-full w-full md:w-8/12 mx-auto'>
+            <div className='w-full md:w-3/5 h-full  px-4 md:p-0 '>
                 {selectedProject && (
                     <motion.div
                         className='relative top-0 left-0 w-full h-full text-white'
@@ -125,7 +125,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     </motion.div>
                 )}
             </div>
-            <div className='flex flex-col  w-2/5 h-full text-white text-2xl font-mono'>
+            <div className='hidden md:flex flex-col w-2/5 h-full text-white text-2xl font-mono'>
                 {projects.map((project, i) => (
                     <div
                         key={`project-${i}`}
@@ -133,7 +133,21 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                             debouncedSetSelectedProject(project)
                         }
                         onClick={() => setSelectedProject(project)}
-                        className='flex justify-between items-baseline py-4 border-t-2 border-white hover:pl-6  hover:font-bold transition-all duration-500'
+                        className='flex justify-between items-baseline py-4 border-t-2 border-white hover:pl-6 hover:font-bold transition-all duration-500'
+                    >
+                        {project.name}
+                        <span className='text-sm text-right font-normal text-gray-400 ml-2'>
+                            {project.type}
+                        </span>
+                    </div>
+                ))}
+            </div>
+            <div className='flex flex-col md:hidden w-full h-full text-white text-2xl font-mono'>
+                {projects.map((project, i) => (
+                    <div
+                        key={`project-${i}`}
+                        onClick={() => setSelectedProject(project)}
+                        className='flex justify-between items-baseline py-4 border-t-2 border-white hover:pl-6 hover:font-bold transition-all duration-500 px-2'
                     >
                         {project.name}
                         <span className='text-sm text-right font-normal text-gray-400 ml-2'>
