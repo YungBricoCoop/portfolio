@@ -23,7 +23,7 @@ const Hero: React.FC<HeroProps> = ({
             <motion.img
                 src={logo}
                 alt='logo'
-                className='w-64'
+                className='w-48 my-8 sm:w-64 sm:my-0'
                 initial={{
                     scale: 0,
                 }}
