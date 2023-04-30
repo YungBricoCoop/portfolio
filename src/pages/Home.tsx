@@ -21,11 +21,13 @@ import logo from '../assets/logo.png';
 
 // data
 import { techno, tools, projects } from '../data/data';
+import Disclaimer from "../components/Disclaimer";
 
 const Home: React.FC = () => {
     return (
         <Page>
             <Pointer latency={80} />
+			<Disclaimer  />
             <div className='flex gap-2 flex-wrap min-h-screen'>
                 <Hero
                     fullname='Elwan Mayencourt'
