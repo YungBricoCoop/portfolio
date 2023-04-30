@@ -5,13 +5,26 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-const PanoramaViewer: React.FC = () => {
-    const images = ['panorama/panorama2.png', 'panorama/panorama1.png', 'panorama/panorama3.png'];
+// functions
+const calculateViewerHeight = (width: number) => {
+    const maxWidth = 1440;
+    const minHeight = 400;
+    const maxHeight = 700;
 
-    // remove scrollbar width from window width
-    const scrollBarWidth = /*  window.innerWidth - document.body.clientWidth */ 8;
-    const width = window.innerWidth - scrollBarWidth;
-    const height = 700;
+    if (width > maxWidth) return maxHeight;
+    const scale = (width - minHeight) / (maxWidth - minHeight);
+    return Math.round(scale * (maxHeight - minHeight) + minHeight);
+};
+
+const PanoramaViewer: React.FC = () => {
+    const images = [
+        'panorama/panorama2.png',
+        'panorama/panorama1.png',
+        'panorama/panorama3.png',
+    ];
+
+    const width = window.innerWidth;
+    const height = calculateViewerHeight(width);
 
     //  refs
     const containerRef = useRef<HTMLDivElement>(null);
@@ -68,9 +81,13 @@ const PanoramaViewer: React.FC = () => {
         controls.rotateSpeed = 0.1;
 
         const onWindowResize = () => {
-            camera.aspect = width / height;
+            const newWidth = window.innerWidth;
+            const newHeight = calculateViewerHeight(newWidth);
+
+            // update camera and renderer with new width and height
+            camera.aspect = newWidth / newHeight;
             camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
+            renderer.setSize(newWidth, newHeight);
         };
 
         const onScroll = () => {
@@ -122,10 +139,13 @@ const PanoramaViewer: React.FC = () => {
                     setCurrentImage((currentImage + 1) % images.length)
                 }
             >
-                <h1 className='font-bold text-3xl cursor-pointer'>
+                <h1 className='font-bold text-xl md:text-3xl cursor-pointer'>
                     Explore my mind
                 </h1>
-                <h2 className='font-medium text-xl italic'>
+                <h2 className='md:hidden font-medium text-xl italic'>
+                    Use your finger to move around
+                </h2>
+                <h2 className='hidden md:block font-medium text-xl italic'>
                     Use your mouse to move around
                 </h2>
                 <div className='absolute right-0 top-0 p-2'>

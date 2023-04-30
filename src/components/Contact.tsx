@@ -25,7 +25,7 @@ const Contact: React.FC<ContactProps> = ({ email }) => {
             variants={variants}
             viewport={{ once: true, amount: 0.8 }}
         >
-            <span className='text-white text-lg'>
+            <span className='text-white text-md md:text-lg'>
                 You can contact me at{' '}
                 <a
                     href={`mailto:${email}?subject=Portfolio%20Contact`}
