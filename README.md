@@ -6,7 +6,7 @@
 My portfolio was designed using [![React](https://img.shields.io/badge/-React-61dafb?logo=react&logoColor=white&style=flat)](https://reactjs.org/), [![TypeScript](https://img.shields.io/badge/-TypeScript-007acc?logo=typescript&logoColor=white&style=flat)](https://www.typescriptlang.org/), [![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white&style=flat)](https://tailwindcss.com/), and [![Three.js](https://img.shields.io/badge/-Three.js-black?logo=three.js&logoColor=white&style=flat)](https://threejs.org/). It also features 3D elements using [![Spline](https://img.shields.io/badge/-Spline-FF5C8D?logo=spline&logoColor=white&style=flat)](https://spline.design/).
 
 
-##🚀 Todo
+## 🚀 Todo
 
 - [ ] 🪐 Add spatial audio 
 
