@@ -36,7 +36,7 @@ const Pointer: React.FC<PointerProps> = ({ latency = 100 }) => {
 
     return (
         <motion.div
-            className='w-4 h-4 rounded-full bg-white bg-opacity-0 z-50 backdrop-invert select-none pointer-events-none'
+            className='hidden sm:block w-4 h-4 rounded-full bg-white bg-opacity-0 z-50 backdrop-invert select-none pointer-events-none'
             style={{
                 position: 'absolute',
                 left: position.x,
