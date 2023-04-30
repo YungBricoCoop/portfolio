@@ -10,6 +10,10 @@ My portfolio was designed using [![React](https://img.shields.io/badge/-React-61
 
 - [ ] 🪐 Add spatial audio 
 
+## ⏳ Time Tracking
+
+[![wakatime](https://wakatime.com/badge/user/ee872f10-6167-41c6-8aad-e80d7519df4c/project/d6a7f038-caa9-4919-b1c6-d3fea1b31e08.svg)](https://wakatime.com/badge/user/ee872f10-6167-41c6-8aad-e80d7519df4c/project/d6a7f038-caa9-4919-b1c6-d3fea1b31e08)
+
 ## 🤝Contributing
 
 Im open to contributions! If you'd like to contribute, please create a pull request and I'll review it as soon as I can.
