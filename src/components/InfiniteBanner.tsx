@@ -19,7 +19,7 @@ const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
     const containerClass =
         'w-24 md:w-64 h-24 mx-2 flex items-center justify-center rounded-xl bg-white bg-opacity-0 hover:bg-opacity-5 transition-all duration-500 cursor-pointer';
 
-    const cardVariants = {
+    const animation = {
         offscreen: {
             opacity: 0,
             y: 20,
@@ -35,7 +35,7 @@ const InfiniteBanner: React.FC<InfiniteBannerProps> = ({
             className='ticker my-8 mt-0'
             initial='offscreen'
             whileInView='onscreen'
-            variants={cardVariants}
+            variants={animation}
             viewport={{ once: true, amount: 0.8 }}
         >
             <HorizontalTicker duration={20000 / speed} reverse={reverse}>
