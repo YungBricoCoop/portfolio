@@ -23,6 +23,24 @@ export const tools = [
 
 export const projects = [
 	{
+		name: 'OMG',
+		description:
+			'OddMailGuard is a website that allows users to transfer an email to the given address and assign an oddness score to it. It analyzes the sender, subject, body and attachments to determine the oddness of the email.',
+		type: 'Web',
+		technologies: [
+			'React',
+			'TypeScript',
+			'TailwindCSS',
+			'Framer Motion',
+			'FastAPI',
+			'Python',
+			'IMAP',
+		],
+		link: 'https://omg.elwan.ch/',
+		github: 'https://github.com/YungBricoCoop/omg',
+		image: 'gradients/gradient1.jpg',
+	},
+	{
 		name: 'Portfolio V3',
 		description:
 			'A sleek and minimalistic third version of my personal portfolio, showcasing my work while maintaining a visually appealing design.',
@@ -37,7 +55,7 @@ export const projects = [
 		],
 		link: 'https://elwan.ch/',
 		github: 'https://github.com/YungBricoCoop/portfolio',
-		image: 'gradients/gradient1.jpg',
+		image: 'gradients/gradient8.jpg',
 	},
 	{
 		name: 'ELMA',
