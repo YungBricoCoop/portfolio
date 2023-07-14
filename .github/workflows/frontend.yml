@@ -1,0 +1,26 @@
+name: Frontend
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: "[FRONTEND] 📦 Install depedencies"
+      run: npm install
+
+    - name: "[FRONTEND] 👷‍♂️ Build"
+      run: npm run build
+
+    - name: "[FRONTEND] 🚀 Deploy"
+      uses: appleboy/scp-action@v0.1.4
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        source: ${{ secrets.SOURCE }}
+        target: ${{ secrets.TARGET }}
