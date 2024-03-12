@@ -9,28 +9,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.0",
-    "@splinetool/react-spline": "^2.2.1",
-    "@splinetool/runtime": "^0.9.310",
-    "framer-motion": "^10.12.4",
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.0.64",
+    "framer-motion": "^11.0.12",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-infinite-ticker": "^2.1.1",
-    "react-router-dom": "^6.6.1",
-    "three": "^0.152.1"
+    "react-router-dom": "^6.22.3",
+    "three": "^0.162.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.194",
-    "@types/react": "^18.0.26",
-    "@types/react-dom": "^18.0.9",
-    "@types/three": "^0.150.2",
-    "@vitejs/plugin-react": "^3.0.0",
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.20",
-    "prettier": "2.8.1",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.3",
-    "vite": "^4.0.0"
+    "@types/lodash": "^4.17.0",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.21",
+    "@types/three": "^0.162.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "prettier": "3.2.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
   }
 }

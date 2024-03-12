@@ -53,9 +53,6 @@ const PanoramaViewer: React.FC = () => {
         // load the panorama image
         const texture = loader.load(images[currentImage]);
 
-        //INFO: this is mandatory to display the colors correctly
-        texture.encoding = THREE.sRGBEncoding;
-
         // add lightnings
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
         directionalLight.position.set(0, 1, 1).normalize();
